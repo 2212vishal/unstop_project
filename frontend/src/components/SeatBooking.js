@@ -13,7 +13,7 @@ const SeatBooking = ({ setShowBookingForm, seatId, refetchSeats }) => {
     if (count > 0) {
       try {
         // Send the booking request to the backend
-        const response = await axios.post("http://localhost:4000/api/v1/seats/reserve", {
+        const response = await axios.post("https://unstop-project.onrender.com/api/v1/seats/reserve", {
           seatId,
           seatCount: count,
         });

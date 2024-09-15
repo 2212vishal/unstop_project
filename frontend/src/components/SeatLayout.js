@@ -15,7 +15,7 @@ const SeatLayout = () => {
   const fetchSeats = async () => {
     setLoading(true); // Show loader when fetching seats
     try {
-      const response = await axios.get("http://localhost:4000/api/v1/seats");
+      const response = await axios.get("https://unstop-project.onrender.com/api/v1/seats");
       setSeats(response.data);
     } catch (error) {
       console.error("Error fetching seats:", error);
@@ -32,7 +32,7 @@ const SeatLayout = () => {
   const handleResetSeats = async () => {
     setLoading(true); // Show loader when resetting seats
     try {
-      await axios.patch("http://localhost:4000/api/v1/seats/reset");
+      await axios.patch("https://unstop-project.onrender.com/api/v1/seats/reset");
       toast.success("All seats have been reset!"); // Show success toast
       fetchSeats(); // Refetch seats after reset
     } catch (error) {
